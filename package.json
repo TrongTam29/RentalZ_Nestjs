@@ -5,6 +5,10 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": "14.18.0",
+    "yarn": "1.22.15"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
