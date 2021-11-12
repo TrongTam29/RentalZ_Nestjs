@@ -17,6 +17,7 @@ import { HouseInterface } from './house.interface';
 
 @Table
 export class House extends Model implements HouseInterface {
+
     @AutoIncrement
     @PrimaryKey
     @Column

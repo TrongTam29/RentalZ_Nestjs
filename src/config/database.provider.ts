@@ -16,10 +16,10 @@ export const databaseProviders = [
                 database: DatabaseConfig.database.toString(),
                 ssl: true,
                 dialectOptions: {
-                    ssl: {
-                        require: true,
-                        rejectUnauthorized: false,
-                    },
+                    // ssl: {
+                    //     require: true,
+                    //     rejectUnauthorized: false,
+                    // },
                 },
                 logging: (...msg) => console.log(msg),
             });
