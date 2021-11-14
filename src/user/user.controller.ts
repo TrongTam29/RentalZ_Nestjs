@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Patch, Post, Put, Query } from '@nestjs/common';
 import { User } from './user.model';
 import { UserService } from './user.service';
 
@@ -50,6 +50,11 @@ export class UserController {
         } catch (error) {
             throw new HttpException(error, HttpStatus.FORBIDDEN);
         }
+    }
+
+    @Patch('update-image/:id')
+    async update(@Query('image') image: String, @Param('id') id: number): Promise<[number, User[]]> {
+        return await this.userService.updateImage(image, id);
     }
 
 

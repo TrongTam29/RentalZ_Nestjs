@@ -97,6 +97,26 @@ export class HouseService {
             }
         })
     }
+
+    async updateHouse(id: number, house: House): Promise<[number, House[]]> {
+        return await this.houseRepository.update(
+            {
+                name: house.name,
+                price: house.price,
+                type: house.type,
+                city: house.city,
+                address: house.address,
+                furnityreType: house.furnitureType,
+                bedroom: house.bedroom,
+                toilet: house.toilet,
+                diningroom: house.diningroom,
+                image: house.image,
+                detail: house.detail,
+                userId: house.userId,
+
+            },
+            { where: { id: id }, });
+    }
 }
 
 

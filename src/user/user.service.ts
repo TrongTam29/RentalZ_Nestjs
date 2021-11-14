@@ -30,4 +30,8 @@ export class UserService {
     async findById(id: number): Promise<User> {
         return await this.userRepository.findOne({ where: { id: id } });
     }
+
+    async updateImage(image: String, id: number): Promise<[number, User[]]> {
+        return await this.userRepository.update({ image: image }, { where: { id: id }, },);
+    }
 }
