@@ -12,6 +12,7 @@ import {
     Table,
     Unique,
 } from 'sequelize-typescript';
+import { UserComment } from 'src/user-comment/user-comment.model';
 import { User } from 'src/user/user.model';
 import { HouseInterface } from './house.interface';
 
@@ -62,5 +63,8 @@ export class House extends Model implements HouseInterface {
 
     @BelongsTo(() => User)
     user: User
+
+    @HasMany(() => UserComment)
+    userComment: UserComment;
 
 }

@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
 import { DatabaseConfig } from "src/config/database.config";
+import { UserComment } from "src/user-comment/user-comment.model";
 import { House } from "../house/house.model";
 import { User } from "../user/user.model";
 
@@ -25,8 +26,8 @@ export const databaseProviders = [
             });
             sequelize.addModels([
                 User,
-                House
-
+                House,
+                UserComment
             ]);
             await sequelize.sync();
             return sequelize;

@@ -13,6 +13,7 @@ import {
     Unique,
 } from 'sequelize-typescript';
 import { House } from 'src/house/house.model';
+import { UserComment } from 'src/user-comment/user-comment.model';
 import { UserInterface } from './user.interface';
 
 @Table
@@ -36,5 +37,8 @@ export class User extends Model implements UserInterface {
 
     @HasMany(() => House)
     house: House;
+
+    @HasMany(() => UserComment)
+    userComment: UserComment;
 
 }
